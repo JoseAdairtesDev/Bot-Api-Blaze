@@ -1,9 +1,9 @@
 import requests
 import time
 
-token = '5173235052:AAHGynmqnnJ-JkFLIQ5Y1PLi7DG3VPu_-zU'
+token = 'Seu token'
 
-chat_id = '5145857050'
+chat_id = 'id do chat'
 
 while True:
 
