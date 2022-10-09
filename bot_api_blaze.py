@@ -1,9 +1,13 @@
 import requests
+import telegram 
 import time
 
-token = 'Seu token'
 
-chat_id = 'id do chat'
+TOKEN = 'seu token'
+
+bot = telegram.Bot(TOKEN)
+
+chat_id = 'seu id'
 
 while True:
 
@@ -33,10 +37,11 @@ while True:
     def resultado(num):
         if num[0:4] == ['Preto', 'Vermelho', 'Vermelho', 'Vermelho']:
 
-            text = '''✅ GREEN no ⚫'''
-            url_base = f'https://api.telegram.org/bot{token}/sendMessage?chat_id={chat_id}&text={text}'
-            results = requests.get(url_base)
-            time.sleep(5)
+            msg = '''✅ GREEN no ⚫'''
+            mensagem = bot.send_message(chat_id=chat_id, text=msg)
+            time.sleep(40)
+            mensagem.delete()
+            
 
         elif num[0:4] == ['Vermelho', 'Vermelho', 'Vermelho', 'Vermelho']:
 
